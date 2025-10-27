@@ -1,7 +1,7 @@
 package br.ulbra.model;
 
 public class Produto {
-private int idProduto;
+    private int idProduto;
     private String nomeProduto;
     private String descricao;
     private double valorUnitario;
