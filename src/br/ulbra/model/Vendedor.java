@@ -1,18 +1,30 @@
 package br.ulbra.model;
+import java.sql.Date;
+import java.time.LocalDate;
+
 
 public class Vendedor {
+
     private int idVendedor;
     private String nome;
     private String cpf;
     private String sexo;
     private String email;
     private boolean ativo;
-    private date dataEmissao; //arrumar no curso
+    private LocalDate dataEmissao;
+    private Date dataEmissaoSql;
 
     public Vendedor() {
     }
 
-    public Vendedor(int idVendedor, String nome, String cpf, String sexo, String email, boolean ativo, date dataEmissao) {
+    public java.sql.Date getDataEmissaoSql() {
+        return dataEmissaoSql;
+    }
+
+
+    
+
+    public Vendedor(int idVendedor, String nome, String cpf, String sexo, String email, boolean ativo, LocalDate dataEmissao) {
         this.idVendedor = idVendedor;
         this.nome = nome;
         this.cpf = cpf;
@@ -20,7 +32,20 @@ public class Vendedor {
         this.email = email;
         this.ativo = ativo;
         this.dataEmissao = dataEmissao;
+        this.dataEmissaoSql = Date.valueOf(dataEmissao);
     }
+
+    public Vendedor(int idVendedor, String nome, String cpf, String sexo, String email, boolean ativo) {
+        this.idVendedor = idVendedor;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.sexo = sexo;
+        this.email = email;
+        this.ativo = ativo;
+    }
+    
+    
+    
 
     public int getIdVendedor() {
         return idVendedor;
@@ -46,7 +71,7 @@ public class Vendedor {
         return ativo;
     }
 
-    public date getDataEmissao() {
+    public LocalDate getDataEmissao() {
         return dataEmissao;
     }
 
@@ -74,7 +99,13 @@ public class Vendedor {
         this.ativo = ativo;
     }
 
-    public void setDataEmissao(date dataEmissao) {
+    public void setDataEmissao(LocalDate dataEmissao) {
         this.dataEmissao = dataEmissao;
     }
+
+    @Override
+    public String toString() {
+        return "Vendedor{" + "idVendedor=" + idVendedor + ", nome=" + nome + ", cpf=" + cpf + ", sexo=" + sexo + ", email=" + email + ", ativo=" + ativo + ", dataEmissao=" + dataEmissao + ", dataEmissaoSql=" + dataEmissaoSql + '}';
+    }
+    
 }
