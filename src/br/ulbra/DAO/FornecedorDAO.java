@@ -73,14 +73,14 @@ public class FornecedorDAO extends AbstractDAO implements CrudRepository<Fornece
                         rs.getString("telefone")
                 );
                 lista.add(f);
-            }.
+            }
         }
         return lista;
     }
 
     @Override
     public void atualizar(Fornecedor f) throws SQLException {
-      String sql = "UPDATE fornecedor set razaoSocial=?, nomeFantasia=?, cnpj=?, email=?, telefone=?  where idfor=?";
+      String sql = "UPDATE fornecedor set razaoSocial=?, nomeFantasia=?, cnpj=?, email=?, telefone=?  where idFornecedor=?";
         try (Connection con = getConnection();
                 PreparedStatement ps = con.prepareStatement(sql)) {
            ps.setString(1, f.getRazaoSocial());
@@ -95,7 +95,7 @@ public class FornecedorDAO extends AbstractDAO implements CrudRepository<Fornece
 
     @Override
     public void remover(int id) throws SQLException {
-          String sql = "DELETE FROM fornecedor WHERE idfor = ?";
+          String sql = "DELETE FROM fornecedor WHERE idFornecedor = ?";
         try (Connection con = getConnection();
                 PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
