@@ -1,3 +1,4 @@
+
 package br.ulbra.controller;
 
 import br.ulbra.DAO.VendedorDAO;
@@ -24,3 +25,4 @@ public class VendedorController {
         dao.remover(id);
     }
 }
+

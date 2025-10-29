@@ -1,3 +1,4 @@
+
 package br.ulbra.DAO;
 
 import br.ulbra.model.Vendedor;
@@ -115,3 +116,4 @@ public class VendedorDAO extends AbstractDAO implements CrudRepository<Vendedor>
     
     
 }
+
