@@ -11,6 +11,11 @@ public class Fornecedor {
     public Fornecedor() {
     }
 
+   
+
+    
+    
+    
     public Fornecedor(int idFornecedor, String razaoSocial, String nomeFantasia, String cnpj, String email, String telefone) {
         this.idFornecedor = idFornecedor;
         this.razaoSocial = razaoSocial;
@@ -19,7 +24,10 @@ public class Fornecedor {
         this.email = email;
         this.telefone = telefone;
     }
-
+     public Fornecedor(int idFornecedor, String nomeFantasia) {
+        this.idFornecedor = idFornecedor;
+        this.nomeFantasia = nomeFantasia;
+    }
     @Override
     public String toString() {
         return "Fornecedor{" + "idFornecedor=" + idFornecedor + ", razaoSocial=" + razaoSocial + ", nomeFantasia=" + nomeFantasia + ", cnpj=" + cnpj + ", email=" + email + ", telefone=" + telefone + '}';

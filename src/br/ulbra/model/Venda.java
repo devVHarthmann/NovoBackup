@@ -1,26 +1,42 @@
 package br.ulbra.model;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 public class Venda {
     private int idVenda;
-    private date dataVenda;
+    private LocalDate dataVenda;
+    private Date dataVendaSql;
     private double valorTotal;
-    private Vendedor idVendedor;
+    private Usuario idVendedor;
 
     public Venda() {
     }
 
-    public Venda(int idVenda, date dataVenda, double valorTotal, Vendedor idVendedor) {
+    public java.sql.Date getDataVendaSql() {
+        return dataVendaSql;
+    }
+
+    public Venda(int idVenda, LocalDate dataVenda, double valorTotal, Usuario idVendedor) {
         this.idVenda = idVenda;
         this.dataVenda = dataVenda;
+        this.dataVendaSql = Date.valueOf(dataVenda);
         this.valorTotal = valorTotal;
         this.idVendedor = idVendedor;
     }
 
+    public Venda(int idVenda, double valorTotal, Usuario idVendedor) {
+        this.idVenda = idVenda;
+        this.valorTotal = valorTotal;
+        this.idVendedor = idVendedor;
+    }
+    
+    
     public int getIdVenda() {
         return idVenda;
     }
 
-    public date getDataVenda() {
+    public LocalDate getDataVenda() {
         return dataVenda;
     }
 
@@ -28,7 +44,7 @@ public class Venda {
         return valorTotal;
     }
 
-    public Vendedor getIdVendedor() {
+    public Usuario getIdVendedor() {
         return idVendedor;
     }
 
@@ -36,7 +52,7 @@ public class Venda {
         this.idVenda = idVenda;
     }
 
-    public void setDataVenda(date dataVenda) {
+    public void setDataVenda(LocalDate dataVenda) {
         this.dataVenda = dataVenda;
     }
 
@@ -44,7 +60,7 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public void setIdVendedor(Vendedor idVendedor) {
+    public void setIdVendedor(Usuario idVendedor) {
         this.idVendedor = idVendedor;
     }
 }
