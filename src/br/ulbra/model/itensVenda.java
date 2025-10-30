@@ -49,6 +49,11 @@ public class itensVenda {
     public void setPrecoUnit(double precoUnit) {
         this.precoUnit = precoUnit;
     }
+
+    @Override
+    public String toString() {
+        return "itensVenda{" + "idVenda=" + idVenda + ", idProduto=" + idProduto + ", quantiProduto=" + quantiProduto + ", precoUnit=" + precoUnit + '}';
+    }
     
     
 }
