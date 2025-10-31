@@ -97,7 +97,7 @@
                                   <Component id="txtNome" min="-2" pref="345" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtValorUnitario1" min="-2" pref="147" max="-2" attributes="0"/>
+                              <Component id="txtCategoria" min="-2" pref="147" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                   <Component id="btnCadastrar" min="-2" pref="150" max="-2" attributes="0"/>
@@ -143,7 +143,7 @@
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtValorUnitario1" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="txtCategoria" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnCadastrar" min="-2" pref="50" max="-2" attributes="0"/>
                       </Group>
@@ -309,9 +309,9 @@
             <Property name="text" type="java.lang.String" value="Categoria:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtValorUnitario1">
+        <Component class="javax.swing.JTextField" name="txtCategoria">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorUnitario1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCategoriaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

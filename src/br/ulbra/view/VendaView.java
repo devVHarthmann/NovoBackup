@@ -34,26 +34,26 @@ public class VendaView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
         txtIdVendedor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         cdDataVenda = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtValorUnitario = new javax.swing.JTextField();
-        txtQuantidadeEstoque = new javax.swing.JTextField();
+        txtUnidadesCompra = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbProduto = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbVenda = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        txtId1 = new javax.swing.JTextField();
+        cbCategoria = new javax.swing.JComboBox<>();
+        txtNome = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        btnProcurar = new javax.swing.JToggleButton();
+        btnLimparCampos = new javax.swing.JToggleButton();
+        btnLimparTabela = new javax.swing.JToggleButton();
+        btnAdicionarItem = new javax.swing.JToggleButton();
 
         jTextField1.setText("jTextField1");
 
@@ -86,9 +86,9 @@ public class VendaView extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cadastro de venda");
 
-        txtId.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -116,9 +116,9 @@ public class VendaView extends javax.swing.JFrame {
             }
         });
 
-        txtQuantidadeEstoque.addActionListener(new java.awt.event.ActionListener() {
+        txtUnidadesCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuantidadeEstoqueActionPerformed(evt);
+                txtUnidadesCompraActionPerformed(evt);
             }
         });
 
@@ -126,9 +126,9 @@ public class VendaView extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Unidades de compra:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbVenda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
             },
@@ -136,18 +136,18 @@ public class VendaView extends javax.swing.JFrame {
                 "Produto", "Categoria:", "Valor unitário", "Unidades para compra"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbVenda);
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Categoria:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        txtId1.setEditable(false);
-        txtId1.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.setEditable(false);
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtId1ActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
 
@@ -155,25 +155,25 @@ public class VendaView extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Nome cliente:");
 
-        jToggleButton1.setText("Procurar CPF");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnProcurar.setText("Procurar CPF");
+        btnProcurar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                btnProcurarActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jToggleButton2.setText("Limpar campos");
+        btnLimparCampos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnLimparCampos.setText("Limpar campos");
 
-        jToggleButton3.setText("Limpar tabela");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparTabela.setText("Limpar tabela");
+        btnLimparTabela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                btnLimparTabelaActionPerformed(evt);
             }
         });
 
-        jToggleButton5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jToggleButton5.setText("Adicionar item");
+        btnAdicionarItem.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAdicionarItem.setText("Adicionar item");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -192,38 +192,38 @@ public class VendaView extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel10)
                                         .addGap(0, 127, Short.MAX_VALUE))
-                                    .addComponent(txtId1))
+                                    .addComponent(txtNome))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
                                     .addComponent(cdDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jToggleButton1))
+                                .addComponent(btnProcurar))
                             .addComponent(jLabel7)
                             .addComponent(txtIdVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jToggleButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnAdicionarItem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtValorUnitario)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel8)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(txtQuantidadeEstoque, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                            .addComponent(txtUnidadesCompra, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbCategoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLimparTabela, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(txtValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,7 +240,7 @@ public class VendaView extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton3)
+                        .addComponent(btnLimparTabela)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -251,13 +251,13 @@ public class VendaView extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel9)
                             .addGap(3, 3, 3)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel8)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtQuantidadeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUnidadesCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(jToggleButton2))
+                            .addComponent(btnLimparCampos))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,14 +267,14 @@ public class VendaView extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel10)
                                             .addGap(6, 6, 6)
-                                            .addComponent(txtId1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jLabel3)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(cdDataVenda, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnProcurar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(18, 18, 18)
                             .addComponent(jLabel7)
                             .addGap(6, 6, 6)
@@ -284,14 +284,14 @@ public class VendaView extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(3, 3, 3)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jLabel6)
                                     .addGap(6, 6, 6)
                                     .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGap(142, 142, 142)
-                                    .addComponent(jToggleButton5))))))
+                                    .addComponent(btnAdicionarItem))))))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
 
@@ -321,25 +321,25 @@ public class VendaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorUnitarioActionPerformed
 
-    private void txtQuantidadeEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeEstoqueActionPerformed
+    private void txtUnidadesCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadesCompraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuantidadeEstoqueActionPerformed
+    }//GEN-LAST:event_txtUnidadesCompraActionPerformed
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void btnLimparTabelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparTabelaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+    }//GEN-LAST:event_btnLimparTabelaActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void btnProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProcurarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_btnProcurarActionPerformed
 
-    private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
 
-    private void txtId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtId1ActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtId1ActionPerformed
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,10 +377,14 @@ public class VendaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnAdicionarItem;
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JToggleButton btnLimparCampos;
+    private javax.swing.JToggleButton btnLimparTabela;
+    private javax.swing.JToggleButton btnProcurar;
+    private javax.swing.JComboBox<String> cbCategoria;
+    private javax.swing.JComboBox<String> cbProduto;
     private com.toedter.calendar.JDateChooser cdDataVenda;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -392,16 +396,12 @@ public class VendaView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtId1;
+    private javax.swing.JTable tbVenda;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtIdVendedor;
-    private javax.swing.JTextField txtQuantidadeEstoque;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtUnidadesCompra;
     private javax.swing.JTextField txtValorTotal;
     private javax.swing.JTextField txtValorUnitario;
     // End of variables declaration//GEN-END:variables

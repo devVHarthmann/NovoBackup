@@ -40,15 +40,15 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
+        mnCadastros = new javax.swing.JMenu();
+        mnFornecedor = new javax.swing.JMenuItem();
+        mnProduto = new javax.swing.JMenuItem();
+        mnVenda = new javax.swing.JMenuItem();
+        mnEdicao = new javax.swing.JMenu();
+        mnFornecedorEdicao = new javax.swing.JMenuItem();
+        mnClientes = new javax.swing.JMenu();
+        mnFornecedores = new javax.swing.JMenu();
+        mnVendas = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
 
@@ -107,56 +107,61 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuBar1.setMaximumSize(new java.awt.Dimension(200, 32769));
         jMenuBar1.setMinimumSize(new java.awt.Dimension(100, 23));
 
-        jMenu5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu5.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu5.setText("Cadastros");
+        mnCadastros.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        mnCadastros.setForeground(new java.awt.Color(255, 255, 255));
+        mnCadastros.setText("Cadastros");
 
-        jMenuItem3.setText("Fornecedor");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        mnFornecedor.setText("Fornecedor");
+        mnFornecedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                mnFornecedorActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem3);
+        mnCadastros.add(mnFornecedor);
 
-        jMenuItem4.setText("Produto");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        mnProduto.setText("Produto");
+        mnProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                mnProdutoActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem4);
+        mnCadastros.add(mnProduto);
 
-        jMenuItem5.setText("Venda");
-        jMenu5.add(jMenuItem5);
-
-        jMenuBar1.add(jMenu5);
-
-        jMenu6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu6.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu6.setText("Edição");
-
-        jMenuItem9.setText("Fornecedor");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        mnVenda.setText("Venda");
+        mnVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                mnVendaActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem9);
+        mnCadastros.add(mnVenda);
 
-        jMenuBar1.add(jMenu6);
+        jMenuBar1.add(mnCadastros);
 
-        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu4.setText("Clientes");
-        jMenuBar1.add(jMenu4);
+        mnEdicao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        mnEdicao.setForeground(new java.awt.Color(255, 255, 255));
+        mnEdicao.setText("Edição");
 
-        jMenu7.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu7.setText("Fornecedores");
-        jMenuBar1.add(jMenu7);
+        mnFornecedorEdicao.setText("Fornecedor");
+        mnFornecedorEdicao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnFornecedorEdicaoActionPerformed(evt);
+            }
+        });
+        mnEdicao.add(mnFornecedorEdicao);
 
-        jMenu8.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu8.setText("Vendas");
-        jMenuBar1.add(jMenu8);
+        jMenuBar1.add(mnEdicao);
+
+        mnClientes.setForeground(new java.awt.Color(255, 255, 255));
+        mnClientes.setText("Clientes");
+        jMenuBar1.add(mnClientes);
+
+        mnFornecedores.setForeground(new java.awt.Color(255, 255, 255));
+        mnFornecedores.setText("Fornecedores");
+        jMenuBar1.add(mnFornecedores);
+
+        mnVendas.setForeground(new java.awt.Color(255, 255, 255));
+        mnVendas.setText("Vendas");
+        jMenuBar1.add(mnVendas);
 
         setJMenuBar(jMenuBar1);
 
@@ -174,17 +179,21 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void mnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFornecedorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_mnFornecedorActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void mnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProdutoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_mnProdutoActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void mnFornecedorEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFornecedorEdicaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_mnFornecedorEdicaoActionPerformed
+
+    private void mnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnVendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,21 +237,21 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenu mnCadastros;
+    private javax.swing.JMenu mnClientes;
+    private javax.swing.JMenu mnEdicao;
+    private javax.swing.JMenuItem mnFornecedor;
+    private javax.swing.JMenuItem mnFornecedorEdicao;
+    private javax.swing.JMenu mnFornecedores;
+    private javax.swing.JMenuItem mnProduto;
+    private javax.swing.JMenuItem mnVenda;
+    private javax.swing.JMenu mnVendas;
     // End of variables declaration//GEN-END:variables
 }

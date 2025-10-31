@@ -45,7 +45,7 @@ public class ProdutoView extends javax.swing.JFrame {
         tbProduto = new javax.swing.JTable();
         btnCadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txtValorUnitario1 = new javax.swing.JTextField();
+        txtCategoria = new javax.swing.JTextField();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -120,9 +120,9 @@ public class ProdutoView extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Categoria:");
 
-        txtValorUnitario1.addActionListener(new java.awt.event.ActionListener() {
+        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorUnitario1ActionPerformed(evt);
+                txtCategoriaActionPerformed(evt);
             }
         });
 
@@ -152,7 +152,7 @@ public class ProdutoView extends javax.swing.JFrame {
                                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)))
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6)
-                            .addComponent(txtValorUnitario1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
                                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -189,7 +189,7 @@ public class ProdutoView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtValorUnitario1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -226,9 +226,9 @@ public class ProdutoView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuantidadeEstoqueActionPerformed
 
-    private void txtValorUnitario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorUnitario1ActionPerformed
+    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorUnitario1ActionPerformed
+    }//GEN-LAST:event_txtCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,10 +280,10 @@ public class ProdutoView extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTable tbProduto;
+    private javax.swing.JTextField txtCategoria;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQuantidadeEstoque;
     private javax.swing.JTextField txtValorUnitario;
-    private javax.swing.JTextField txtValorUnitario1;
     // End of variables declaration//GEN-END:variables
 }

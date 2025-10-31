@@ -65,7 +65,7 @@
                                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="127" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="txtId1" max="32767" attributes="0"/>
+                                      <Component id="txtNome" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -75,9 +75,9 @@
                               </Group>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtId" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="txtCpf" min="-2" pref="150" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnProcurar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="txtIdVendedor" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
@@ -85,10 +85,10 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jToggleButton5" max="32767" attributes="0"/>
+                                          <Component id="btnAdicionarItem" max="32767" attributes="0"/>
                                           <Component id="txtValorUnitario" max="32767" attributes="0"/>
                                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jComboBox1" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="cbProduto" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="55" max="32767" attributes="0"/>
@@ -96,10 +96,10 @@
                                       <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                          <Component id="jToggleButton2" alignment="1" min="-2" pref="147" max="-2" attributes="0"/>
+                                          <Component id="btnLimparCampos" alignment="1" min="-2" pref="147" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="txtQuantidadeEstoque" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jComboBox2" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
+                                              <Component id="txtUnidadesCompra" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="cbCategoria" alignment="0" min="-2" pref="147" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -107,7 +107,7 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jToggleButton3" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="btnLimparTabela" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="txtValorTotal" min="-2" pref="350" max="-2" attributes="0"/>
@@ -131,7 +131,7 @@
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLimparTabela" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="290" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -144,13 +144,13 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="cbCategoria" min="-2" pref="38" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtQuantidadeEstoque" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Component id="txtUnidadesCompra" min="-2" pref="35" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnLimparCampos" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -161,7 +161,7 @@
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                              <Component id="txtId1" min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="txtNome" min="-2" pref="35" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
                                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -171,8 +171,8 @@
                                       </Group>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="txtId" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="txtCpf" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="btnProcurar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -184,7 +184,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="cbProduto" min="-2" pref="38" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -192,7 +192,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="142" pref="142" max="-2" attributes="0"/>
-                                      <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAdicionarItem" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -260,9 +260,9 @@
             <Property name="text" type="java.lang.String" value="Cadastro de venda"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtId">
+        <Component class="javax.swing.JTextField" name="txtCpf">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIdActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCpfActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIdVendedor">
@@ -310,9 +310,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtValorUnitarioActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtQuantidadeEstoque">
+        <Component class="javax.swing.JTextField" name="txtUnidadesCompra">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtQuantidadeEstoqueActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUnidadesCompraActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -326,7 +326,7 @@
             <Property name="text" type="java.lang.String" value="Unidades de compra:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="cbProduto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -348,7 +348,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="tbVenda">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="1">
@@ -400,7 +400,7 @@
             <Property name="text" type="java.lang.String" value="Categoria:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox2">
+        <Component class="javax.swing.JComboBox" name="cbCategoria">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -415,12 +415,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtId1">
+        <Component class="javax.swing.JTextField" name="txtNome">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtId1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
@@ -434,15 +434,15 @@
             <Property name="text" type="java.lang.String" value="Nome cliente:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="btnProcurar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Procurar CPF"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcurarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+        <Component class="javax.swing.JToggleButton" name="btnLimparCampos">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="1"/>
@@ -450,15 +450,15 @@
             <Property name="text" type="java.lang.String" value="Limpar campos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+        <Component class="javax.swing.JToggleButton" name="btnLimparTabela">
           <Properties>
             <Property name="text" type="java.lang.String" value="Limpar tabela"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparTabelaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+        <Component class="javax.swing.JToggleButton" name="btnAdicionarItem">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="1"/>

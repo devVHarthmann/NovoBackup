@@ -179,7 +179,7 @@ public class CadastroFornecedorView extends javax.swing.JFrame {
                                     .addComponent(cbProdutoFornecido, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(395, 395, 395)
+                        .addGap(392, 392, 392)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(106, Short.MAX_VALUE))
         );
@@ -220,10 +220,10 @@ public class CadastroFornecedorView extends javax.swing.JFrame {
                     .addComponent(txtNomeFantasia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

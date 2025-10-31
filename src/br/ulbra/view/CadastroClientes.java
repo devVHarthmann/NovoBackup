@@ -30,18 +30,18 @@ public class CadastroClientes extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txtNome = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtValorUnitario = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
-        txtQuantidadeEstoque = new javax.swing.JTextField();
+        txtTelefone = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tbProduto = new javax.swing.JTable();
+        tbCliente = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         btnCadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txtValorUnitario1 = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,9 +57,9 @@ public class CadastroClientes extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Email");
 
-        txtValorUnitario.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorUnitarioActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
@@ -77,9 +77,9 @@ public class CadastroClientes extends javax.swing.JFrame {
             }
         });
 
-        txtQuantidadeEstoque.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuantidadeEstoqueActionPerformed(evt);
+                txtTelefoneActionPerformed(evt);
             }
         });
 
@@ -87,7 +87,7 @@ public class CadastroClientes extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Cadastro de cliente");
 
-        tbProduto.setModel(new javax.swing.table.DefaultTableModel(
+        tbCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -95,7 +95,7 @@ public class CadastroClientes extends javax.swing.JFrame {
                 "Id", "Nome", "Email", "Telefone", "CPF"
             }
         ));
-        jScrollPane2.setViewportView(tbProduto);
+        jScrollPane2.setViewportView(tbCliente);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -108,9 +108,9 @@ public class CadastroClientes extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("CPF");
 
-        txtValorUnitario1.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorUnitario1ActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -129,18 +129,18 @@ public class CadastroClientes extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(89, 89, 89)
                                 .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtValorUnitario1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel6))
                                 .addGap(16, 16, 16)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
-                                    .addComponent(txtQuantidadeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
@@ -163,15 +163,15 @@ public class CadastroClientes extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jLabel5)
                         .addGap(6, 6, 6)
-                        .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabel7))
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtValorUnitario1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtQuantidadeEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(65, 65, 65)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -196,21 +196,21 @@ public class CadastroClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void txtValorUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorUnitarioActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorUnitarioActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
 
-    private void txtQuantidadeEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeEstoqueActionPerformed
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuantidadeEstoqueActionPerformed
+    }//GEN-LAST:event_txtTelefoneActionPerformed
 
-    private void txtValorUnitario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorUnitario1ActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorUnitario1ActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,11 +257,11 @@ public class CadastroClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tbProduto;
+    private javax.swing.JTable tbCliente;
+    private javax.swing.JTextField txtCpf;
+    private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtQuantidadeEstoque;
-    private javax.swing.JTextField txtValorUnitario;
-    private javax.swing.JTextField txtValorUnitario1;
+    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

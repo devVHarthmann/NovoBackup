@@ -70,7 +70,7 @@
         </Property>
       </Properties>
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="mnCadastros">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -83,30 +83,33 @@
             <Property name="text" type="java.lang.String" value="Cadastros"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="mnFornecedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fornecedor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnFornecedorActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+            <MenuItem class="javax.swing.JMenuItem" name="mnProduto">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Produto"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnProdutoActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
+            <MenuItem class="javax.swing.JMenuItem" name="mnVenda">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Venda"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnVendaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu6">
+        <Menu class="javax.swing.JMenu" name="mnEdicao">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
@@ -119,17 +122,17 @@
             <Property name="text" type="java.lang.String" value="Edi&#xe7;&#xe3;o"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem9">
+            <MenuItem class="javax.swing.JMenuItem" name="mnFornecedorEdicao">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fornecedor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnFornecedorEdicaoActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="mnClientes">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -137,7 +140,7 @@
             <Property name="text" type="java.lang.String" value="Clientes"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu7">
+        <Menu class="javax.swing.JMenu" name="mnFornecedores">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -145,7 +148,7 @@
             <Property name="text" type="java.lang.String" value="Fornecedores"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu8">
+        <Menu class="javax.swing.JMenu" name="mnVendas">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
