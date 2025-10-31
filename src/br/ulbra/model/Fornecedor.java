@@ -10,11 +10,6 @@ public class Fornecedor {
 
     public Fornecedor() {
     }
-
-   
-
-    
-    
     
     public Fornecedor(int idFornecedor, String razaoSocial, String nomeFantasia, String cnpj, String email, String telefone) {
         this.idFornecedor = idFornecedor;
