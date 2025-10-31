@@ -3,20 +3,33 @@ package br.ulbra.model;
 public class Produto {
     private int idProduto;
     private String nomeProduto;
-    private String descricao;
+    private String categoria;
     private double valorUnitario;
     private int quantEstoque;
-
+    private Fornecedor idFornecedor;
+    
+    
     public Produto() {
     }
 
-    public Produto(int idProduto, String nomeProduto, String descricao, double valorUnitario, int quantEstoque) {
+    public Produto(int idProduto, String nomeProduto, String categoria, double valorUnitario, int quantEstoque, Fornecedor idFornecedor) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
-        this.descricao = descricao;
+        this.categoria = categoria;
+        this.valorUnitario = valorUnitario;
+        this.quantEstoque = quantEstoque;
+        this.idFornecedor = idFornecedor;
+    }
+
+    public Produto(int idProduto, String nomeProduto, String categoria, double valorUnitario, int quantEstoque) {
+        this.idProduto = idProduto;
+        this.nomeProduto = nomeProduto;
+        this.categoria = categoria;
         this.valorUnitario = valorUnitario;
         this.quantEstoque = quantEstoque;
     }
+    
+    
 
     public int getIdProduto() {
         return idProduto;
@@ -26,8 +39,8 @@ public class Produto {
         return nomeProduto;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getCategoria() {
+        return categoria;
     }
 
     public double getValorUnitario() {
@@ -46,8 +59,8 @@ public class Produto {
         this.nomeProduto = nomeProduto;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public void setValorUnitario(double valorUnitario) {
@@ -57,4 +70,18 @@ public class Produto {
     public void setQuantEstoque(int quantEstoque) {
         this.quantEstoque = quantEstoque;
     }
+
+    public Fornecedor getIdFornecedor() {
+        return idFornecedor;
+    }
+
+    public void setIdFornecedor(Fornecedor idFornecedor) {
+        this.idFornecedor = idFornecedor;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" + "idProduto=" + idProduto + ", nomeProduto=" + nomeProduto + ", categoria=" + categoria + ", valorUnitario=" + valorUnitario + ", quantEstoque=" + quantEstoque + ", idFornecedor=" + idFornecedor + '}';
+    }
+    
 }

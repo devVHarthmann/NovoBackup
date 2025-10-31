@@ -7,7 +7,7 @@ package br.ulbra.controller;
 
 /**
  *
- * @author Guilherme
+ * @author devVHarthmann
  */
 public class VendaController {
     
