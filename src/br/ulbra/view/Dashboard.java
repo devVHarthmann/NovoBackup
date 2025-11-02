@@ -7,12 +7,12 @@ package br.ulbra.view;
 
 /**
  *
- * @author Guilherme
+ * @author bruno
  */
 public class Dashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form Dashboard
+     * Creates new form Dashboard2
      */
     public Dashboard() {
         initComponents();
@@ -27,141 +27,98 @@ public class Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mnCadastros = new javax.swing.JMenu();
-        mnFornecedor = new javax.swing.JMenuItem();
-        mnProduto = new javax.swing.JMenuItem();
-        mnVenda = new javax.swing.JMenuItem();
-        mnEdicao = new javax.swing.JMenu();
-        mnFornecedorEdicao = new javax.swing.JMenuItem();
-        mnClientes = new javax.swing.JMenu();
-        mnFornecedores = new javax.swing.JMenu();
-        mnVendas = new javax.swing.JMenu();
-
-        jMenu1.setText("jMenu1");
-
-        jMenu2.setText("jMenu2");
+        mnCadastrar = new javax.swing.JMenu();
+        mnCliente = new javax.swing.JMenu();
+        mnCadastroFornecedor = new javax.swing.JMenu();
+        mnUsuario = new javax.swing.JMenu();
+        mnProduto = new javax.swing.JMenu();
+        mnVenda = new javax.swing.JMenu();
+        mnFonecedor = new javax.swing.JMenu();
+        mnFornecedor = new javax.swing.JMenu();
+        mnListaClientes = new javax.swing.JMenu();
+        mnListaFornecedores = new javax.swing.JMenu();
+        mnListaVendas = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
-
-        jMenuItem2.setText("jMenuItem2");
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
-
-        jMenuItem6.setText("jMenuItem6");
-
-        jMenuItem7.setText("jMenuItem7");
-
-        jMenuItem8.setText("jMenuItem8");
 
         jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Enterprise Flow");
+        jLabel1.setFont(new java.awt.Font("Myanmar Text", 0, 48)); // NOI18N
+        jLabel1.setText("EnterpriseFlow");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Quem somos?");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(344, 344, 344))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(313, 313, 313)
+                        .addComponent(jLabel2)))
+                .addContainerGap(215, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(428, Short.MAX_VALUE))
+                .addContainerGap(338, Short.MAX_VALUE))
         );
 
-        jMenuBar1.setMaximumSize(new java.awt.Dimension(200, 32769));
-        jMenuBar1.setMinimumSize(new java.awt.Dimension(100, 23));
+        mnCadastrar.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        mnCadastrar.setText("Cadastrar");
 
-        mnCadastros.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        mnCadastros.setForeground(new java.awt.Color(255, 255, 255));
-        mnCadastros.setText("Cadastros");
+        mnCliente.setText("Cliente");
+        mnCadastrar.add(mnCliente);
 
-        mnFornecedor.setText("Fornecedor");
-        mnFornecedor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnFornecedorActionPerformed(evt);
-            }
-        });
-        mnCadastros.add(mnFornecedor);
+        mnCadastroFornecedor.setText("Fornecedor");
+        mnCadastrar.add(mnCadastroFornecedor);
+
+        mnUsuario.setText("Usuario");
+        mnCadastrar.add(mnUsuario);
 
         mnProduto.setText("Produto");
-        mnProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnProdutoActionPerformed(evt);
-            }
-        });
-        mnCadastros.add(mnProduto);
+        mnCadastrar.add(mnProduto);
 
         mnVenda.setText("Venda");
-        mnVenda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnVendaActionPerformed(evt);
-            }
-        });
-        mnCadastros.add(mnVenda);
+        mnCadastrar.add(mnVenda);
 
-        jMenuBar1.add(mnCadastros);
+        jMenuBar1.add(mnCadastrar);
 
-        mnEdicao.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        mnEdicao.setForeground(new java.awt.Color(255, 255, 255));
-        mnEdicao.setText("Edição");
+        mnFonecedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        mnFonecedor.setText("Editar");
 
-        mnFornecedorEdicao.setText("Fornecedor");
-        mnFornecedorEdicao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnFornecedorEdicaoActionPerformed(evt);
-            }
-        });
-        mnEdicao.add(mnFornecedorEdicao);
+        mnFornecedor.setText("Fornecedor");
+        mnFonecedor.add(mnFornecedor);
 
-        jMenuBar1.add(mnEdicao);
+        jMenuBar1.add(mnFonecedor);
 
-        mnClientes.setForeground(new java.awt.Color(255, 255, 255));
-        mnClientes.setText("Clientes");
-        jMenuBar1.add(mnClientes);
+        mnListaClientes.setText("Clientes");
+        jMenuBar1.add(mnListaClientes);
 
-        mnFornecedores.setForeground(new java.awt.Color(255, 255, 255));
-        mnFornecedores.setText("Fornecedores");
-        jMenuBar1.add(mnFornecedores);
+        mnListaFornecedores.setText("Fornecedores");
+        jMenuBar1.add(mnListaFornecedores);
 
-        mnVendas.setForeground(new java.awt.Color(255, 255, 255));
-        mnVendas.setText("Vendas");
-        jMenuBar1.add(mnVendas);
+        mnListaVendas.setText("Vendas");
+        jMenuBar1.add(mnListaVendas);
 
         setJMenuBar(jMenuBar1);
 
@@ -169,31 +126,15 @@ public class Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mnFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFornecedorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnFornecedorActionPerformed
-
-    private void mnProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnProdutoActionPerformed
-
-    private void mnFornecedorEdicaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnFornecedorEdicaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnFornecedorEdicaoActionPerformed
-
-    private void mnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnVendaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,6 +162,7 @@ public class Dashboard extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -231,110 +173,22 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenu mnCadastros;
-    private javax.swing.JMenu mnClientes;
-    private javax.swing.JMenu mnEdicao;
-    private javax.swing.JMenuItem mnFornecedor;
-    private javax.swing.JMenuItem mnFornecedorEdicao;
-    private javax.swing.JMenu mnFornecedores;
-    private javax.swing.JMenuItem mnProduto;
-    private javax.swing.JMenuItem mnVenda;
-    private javax.swing.JMenu mnVendas;
-    // End of variables declaration//GEN-END:variables
-}
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.ulbra.view;
-
-/**
- *
- * @author Guilherme
- */
-public class Dashboard extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Dashboard
-     */
-    public Dashboard() {
-        initComponents();
-    }
-
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Dashboard().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu mnCadastrar;
+    private javax.swing.JMenu mnCadastroFornecedor;
+    private javax.swing.JMenu mnCliente;
+    private javax.swing.JMenu mnFonecedor;
+    private javax.swing.JMenu mnFornecedor;
+    private javax.swing.JMenu mnListaClientes;
+    private javax.swing.JMenu mnListaFornecedores;
+    private javax.swing.JMenu mnListaVendas;
+    private javax.swing.JMenu mnProduto;
+    private javax.swing.JMenu mnUsuario;
+    private javax.swing.JMenu mnVenda;
     // End of variables declaration//GEN-END:variables
 }
