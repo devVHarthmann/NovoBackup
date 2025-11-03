@@ -124,7 +124,7 @@ public class ListaVendasView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLotbVendastaVendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+           
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(ListaVendasView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {

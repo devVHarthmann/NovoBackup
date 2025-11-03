@@ -15,7 +15,7 @@ public class ProdutoDAO extends AbstractDAO implements CrudRepository<Produto> {
 
     @Override
     public void salvar(Produto p) throws SQLException {
-        String sql = "INSERT INTO tarefa (nomeProduto, categoria, valorUnitario, quantEstoque, idFornecedor) VALUES (?, ?, ?,?,?)";
+        String sql = "INSERT INTO produto (nomeProduto, categoria, valorUnitario, quantEstoque, idFornecedor) VALUES (?, ?, ?,?,?)";
         try (Connection con = getConnection();
                 PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             ps.setString(1, p.getNomeProduto());
@@ -72,7 +72,7 @@ public class ProdutoDAO extends AbstractDAO implements CrudRepository<Produto> {
     @Override
     public List<Produto> listar() throws SQLException {
         String sql = "SELECT p.idProduto, p.nomeProduto, p.categoria, p.valorUnitario, p.quantEstoque, p.idFornecedor, f.idFornecedor, f.razaoSocial, f.nomeFantasia, f.cnpj, f.email, f.telefone"
-                + "FROM produto p INNER JOIN fornecedor f ON p.idproduto = f.idfornecedor ORDER by p.idfornecedor";
+                + " FROM produto p INNER JOIN fornecedor f ON p.idfornecedor = f.idfornecedor ORDER by p.idfornecedor";
 
         List<Produto> lista = new ArrayList<>();
 

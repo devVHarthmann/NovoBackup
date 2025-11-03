@@ -190,5 +190,19 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenu mnProduto;
     private javax.swing.JMenu mnUsuario;
     private javax.swing.JMenu mnVenda;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JMenu mnCadastros;
+    private javax.swing.JMenu mnClientes;
+    private javax.swing.JMenu mnEdicao;
+    private javax.swing.JMenuItem mnFornecedor;
+    private javax.swing.JMenuItem mnFornecedorEdicao;
+    private javax.swing.JMenu mnFornecedores;
+    private javax.swing.JMenuItem mnProduto;
+    private javax.swing.JMenuItem mnVenda;
+    private javax.swing.JMenu mnVendas;
     // End of variables declaration//GEN-END:variables
 }
