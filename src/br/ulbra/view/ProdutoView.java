@@ -216,6 +216,11 @@ public class ProdutoView extends javax.swing.JFrame {
                 "Id", "Nome", "Categoria", "Valor unitário", "Quantidade estoque", "Fornecedor"
             }
         ));
+        tbProduto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbProdutoMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tbProduto);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -420,7 +425,7 @@ public class ProdutoView extends javax.swing.JFrame {
             atualizarTabela();
     
             javax.swing.JOptionPane.showMessageDialog(this, "Tarefa salva (ID=" +p.getIdProduto()+ ")");
-            //atualizarTabela();
+            atualizarTabela();
             // limparCampos();
         } catch (Exception ex) {
             javax.swing.JOptionPane.showMessageDialog(this, "Erro ao salvar: " + ex.getMessage());
@@ -429,17 +434,75 @@ public class ProdutoView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        
+        try {
+            int id = Integer.parseInt(txtId.getText());
+            int confirm = javax.swing.JOptionPane.showConfirmDialog(this, "Remover usuário ID " + id
+                    + "?", "Confirma", javax.swing.JOptionPane.YES_NO_OPTION);
+            if (confirm != javax.swing.JOptionPane.YES_OPTION) {
+                return;
+            }
+            controller.remover(id);
+            javax.swing.JOptionPane.showMessageDialog(this, "Usuário " + txtId.getText() + " removido");
+            atualizarTabela();
+            limparCampos();
+        } catch (Exception ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Selecione um usuário para remover");
+        } 
+        setBotoes(0);
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        int idFornecedor = 0;
+        String nomeF = "";
+        int indice = cbFornecedor.getSelectedIndex();
+
+        if (indice >= 0) {
+            Fornecedor fornecedor = listaFornecedores.get(indice);
+            idFornecedor = fornecedor.getIdFornecedor();
+            nomeF = fornecedor.getNomeFantasia();
+        }
         
+
+        try {
+            int idProd = Integer.parseInt(txtId.getText());
+            String nome = txtNome.getText().trim();
+            Double valorUnit = Double.parseDouble(txtValorUnitario.getText());
+            int quant = Integer.parseInt(txtQuantidadeEstoque.getText());
+            String categoria = txtCategoria.getText().trim();
+            
+            Fornecedor f = new Fornecedor(idFornecedor, nomeF);
+            Produto p = new Produto(idProd, nome, categoria, valorUnit, quant, f);
+            controller.atualizar(p);
+            javax.swing.JOptionPane.showMessageDialog(this, "Atualizado com sucesso");
+            atualizarTabela();
+            limparCampos();
+        } catch (NumberFormatException nfe) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Selecione um produto para atualizar");
+        } catch (Exception ex) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao atualizar: " + ex.getMessage());
+            ex.printStackTrace();
+        }
     }//GEN-LAST:event_btnAlterarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         limparCampos();
         atualizarTabela();
     }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void tbProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbProdutoMouseClicked
+       int row = tbProduto.getSelectedRow();
+        if (row >= 0) {
+            txtId.setText(tbProduto.getValueAt(row, 0).toString());
+            txtNome.setText(tbProduto.getValueAt(row, 1).toString());
+            txtCategoria.setText(tbProduto.getValueAt(row, 2).toString());
+            txtValorUnitario.setText(tbProduto.getValueAt(row, 3).toString());
+            txtQuantidadeEstoque.setText(tbProduto.getValueAt(row, 4).toString());
+            cbFornecedor.setSelectedItem(tbProduto.getValueAt(row, 5).toString());
+
+        }
+        atualizarTabela();
+        setBotoes(1);
+    }//GEN-LAST:event_tbProdutoMouseClicked
 
     /**
      * @param args the command line arguments
