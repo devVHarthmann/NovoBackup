@@ -7,6 +7,7 @@ package br.ulbra.view;
 
 import br.ulbra.model.Usuario;
 import br.ulbra.controller.UsuarioController;
+import java.sql.SQLException;
 
 /**
  *
@@ -62,14 +63,12 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                 btnEditar.setEnabled(true);
                 btnExcluir.setEnabled(true);
                 btnLimpar.setEnabled(true);
-                btnListar.setEnabled(true);
                 break;
             default:
                 btnCadastrar.setEnabled(true);
                 btnEditar.setEnabled(false);
                 btnExcluir.setEnabled(false);
                 btnLimpar.setEnabled(false);
-                btnListar.setEnabled(false);
         }
     }
       
@@ -102,7 +101,6 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         btnLimpar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -179,13 +177,6 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
             }
         });
 
-        btnListar.setText("Listar");
-        btnListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -215,10 +206,9 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                                 .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(32, 32, 32)
-                                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)))))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -248,14 +238,13 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
                 .addComponent(cbCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38))
+                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -304,22 +293,30 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        try {
-            String nome = txtNome.getText().trim();
-            String email = txtEmail.getText().trim();
-            String senha = txtSenha.getText().trim();
-            String cargo = cbCargo.getSelectedItem().toString();
-            
+         String emailT = txtEmail.getText();
+        if (emailT.contains("@") && emailT.contains(".com")) {
+            try {
+                int id = Integer.parseInt(txtId.getText());
+                String nome = txtNome.getText().trim();
+                String cargo = cbCargo.getSelectedItem().toString().trim();
+                String email = txtEmail.getText().trim();
 
-            Usuario u = new Usuario(0, nome, email, cargo, senha);
-            controller.atualizar(u);
-            javax.swing.JOptionPane.showMessageDialog(this, "Atualizado com sucesso");
-            atualizarTabela();
-            limparCampos();
-        } catch (NumberFormatException nfe) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Selecione um Usuario para atualizar");
-        } catch (Exception ex) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Erro ao atualizar: " + ex.getMessage());
+                Usuario u = new Usuario(id, nome, email, cargo);
+                controller.atualizar(u);
+                javax.swing.JOptionPane.showMessageDialog(this, "Atualizado com sucesso (Senhas não são alteráveis");
+                atualizarTabela();
+                limparCampos();
+            } catch (SQLException e) {
+                if (e.getErrorCode() == 1062) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "E-mail já cadastrado");
+                }
+            } catch (NumberFormatException nfe) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Selecione um Usuario para atualizar");
+            } catch (Exception ex) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Erro ao atualizar: " + ex.getMessage());
+            }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "E-mail inválido");
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
@@ -357,11 +354,6 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
         }
         setBotoes(1);
     }//GEN-LAST:event_tbUsuariosMouseClicked
-
-    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-       atualizarTabela();
-        setBotoes(0);
-    }//GEN-LAST:event_btnListarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,7 +395,6 @@ public class CadastroUsuarioView extends javax.swing.JFrame {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnLimpar;
-    private javax.swing.JButton btnListar;
     private javax.swing.JComboBox<String> cbCargo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
