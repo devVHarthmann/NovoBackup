@@ -28,6 +28,12 @@ public class Produto {
         this.valorUnitario = valorUnitario;
         this.quantEstoque = quantEstoque;
     }
+
+    public Produto(int idProduto, String nomeProduto, String categoria) {
+        this.idProduto = idProduto;
+        this.nomeProduto = nomeProduto;
+        this.categoria = categoria;
+    }
     
     
 

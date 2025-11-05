@@ -43,7 +43,7 @@ public class FornecedorDAO extends AbstractDAO implements CrudRepository<Fornece
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     return new Fornecedor(
-                            rs.getInt("idFornecedor "),
+                            rs.getInt("idFornecedor"),
                             rs.getString("razaoSocial"),
                             rs.getString("nomeFantasia"),
                             rs.getString("cnpj"),
@@ -65,7 +65,7 @@ public class FornecedorDAO extends AbstractDAO implements CrudRepository<Fornece
                 ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 Fornecedor f = new Fornecedor(
-                        rs.getInt("idFornecedor "),
+                        rs.getInt("idFornecedor"),
                         rs.getString("razaoSocial"),
                         rs.getString("nomeFantasia"),
                         rs.getString("cnpj"),
