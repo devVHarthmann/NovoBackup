@@ -17,7 +17,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -47,35 +49,95 @@ public class VendaView extends javax.swing.JFrame {
 
     private VendaController controller;
     private ItensVendaController controller2;
-
+    private boolean atualizandoProdutos = false;
     private List<Usuario> listaVendedor = new ArrayList<>();
     private List<Produto> listaProdutos = new ArrayList<>();
 
     private void carregarProdutos() {
-        try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbenterpriseflow", "root", "");
-            String sql = "SELECT DISTINCT idProduto, nomeProduto, categoria FROM produto";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbenterpriseflow", "root", "")) {
 
-            cbProduto.removeAllItems();
-            cbCategoria.removeAllItems();
-            while (rs.next()) {
-                Produto p = new Produto(rs.getInt("idProduto"), rs.getString("nomeProduto"), rs.getString("categoria"));
-                listaProdutos.add(p);
+        String sql = "SELECT DISTINCT idProduto, nomeProduto, categoria FROM produto";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+
+        listaProdutos.clear();
+        cbProduto.removeAllItems();
+        cbCategoria.removeAllItems();
+
+        Set<String> categorias = new HashSet<>();
+
+        while (rs.next()) {
+            Produto p = new Produto(
+                rs.getInt("idProduto"),
+                rs.getString("nomeProduto"),
+                rs.getString("categoria")
+            );
+            listaProdutos.add(p);
+            categorias.add(p.getCategoria());
+        }
+
+        cbCategoria.addItem("Todas");
+        for (String cat : categorias) {
+            cbCategoria.addItem(cat);
+        }
+
+        // Mostra todos os produtos inicialmente
+        for (Produto p : listaProdutos) {
+            cbProduto.addItem(p.getNomeProduto());
+        }
+
+        rs.close();
+        ps.close();
+
+        // Listeners
+        cbCategoria.addActionListener(e -> filtrarProdutosPorCategoria());
+        cbProduto.addActionListener(e -> atualizarCategoriaPeloProduto());
+
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Erro ao carregar produtos: " + e.getMessage());
+    }
+}
+
+    private void filtrarProdutosPorCategoria() {
+    String categoriaSelecionada = (String) cbCategoria.getSelectedItem();
+
+    // Evita que o listener de produto dispare enquanto recarrega o combo
+    atualizandoProdutos = true;
+    cbProduto.removeAllItems();
+
+    if (categoriaSelecionada == null || categoriaSelecionada.equals("Todas")) {
+        for (Produto p : listaProdutos) {
+            cbProduto.addItem(p.getNomeProduto());
+        }
+    } else {
+        for (Produto p : listaProdutos) {
+            if (p.getCategoria().equalsIgnoreCase(categoriaSelecionada)) {
                 cbProduto.addItem(p.getNomeProduto());
-                cbCategoria.addItem(p.getCategoria());
             }
-
-            rs.close();
-            ps.close();
-            conn.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro ao carregar produtos: " + e.getMessage());
         }
     }
+
+    atualizandoProdutos = false;
+}
+
+    private void atualizarCategoriaPeloProduto() {
+    if (atualizandoProdutos) return; // ignora evento enquanto produtos estão sendo recarregados
+
+    String produtoSelecionado = (String) cbProduto.getSelectedItem();
+    String categoriaSelecionada = (String) cbCategoria.getSelectedItem();
+
+    if (produtoSelecionado == null || produtoSelecionado.isEmpty()) return;
+
+    if (categoriaSelecionada == null || categoriaSelecionada.equals("Todas") || categoriaSelecionada.isEmpty()) {
+        for (Produto p : listaProdutos) {
+            if (p.getNomeProduto().equals(produtoSelecionado)) {
+                cbCategoria.setSelectedItem(p.getCategoria());
+                break;
+            }
+        }
+    }
+}
 
     private void carregarVendedores() {
         try {
@@ -132,7 +194,7 @@ public class VendaView extends javax.swing.JFrame {
 
     private void limparCampos() {
         txtNome.setText(null);
-        txtValorUnitario.setText(null);
+
         txtCpf.setText(null);
         txtUnidadesCompra.setText(null);
         cbProduto.setSelectedIndex(-1);
@@ -161,8 +223,6 @@ public class VendaView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         dcDataVenda = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        txtValorUnitario = new javax.swing.JTextField();
         txtUnidadesCompra = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         cbProduto = new javax.swing.JComboBox<>();
@@ -220,15 +280,6 @@ public class VendaView extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Produto:");
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel6.setText("Valor unitário:");
-
-        txtValorUnitario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorUnitarioActionPerformed(evt);
-            }
-        });
-
         txtUnidadesCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUnidadesCompraActionPerformed(evt);
@@ -243,7 +294,7 @@ public class VendaView extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Produto", "Categoria:", "Valor unitário", "Unidades"
+                "Produto", "Categoria:", "Valor unitário em R$", "Unidades"
             }
         ));
         jScrollPane1.setViewportView(tbVenda);
@@ -270,6 +321,11 @@ public class VendaView extends javax.swing.JFrame {
 
         btnLimparCampos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnLimparCampos.setText("Limpar campos");
+        btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparCamposActionPerformed(evt);
+            }
+        });
 
         btnLimparTabela.setText("Limpar tabela");
         btnLimparTabela.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +336,11 @@ public class VendaView extends javax.swing.JFrame {
 
         btnAdicionarItem.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnAdicionarItem.setText("Adicionar item");
+        btnAdicionarItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarItemActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnExcluir.setText("Excluir");
@@ -333,20 +394,18 @@ public class VendaView extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(btnAdicionarItem, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel9)
+                                    .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(55, 55, 55)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
                                     .addComponent(jLabel8)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtUnidadesCompra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cbCategoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(txtUnidadesCompra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -411,27 +470,23 @@ public class VendaView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(3, 3, 3)
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtUnidadesCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnLimparCampos))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel9))
-                                    .addGap(3, 3, 3)
-                                    .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel6)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(txtValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(142, 142, 142)
-                                    .addComponent(btnAdicionarItem))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(3, 3, 3)
+                                .addComponent(cbProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cbCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(41, 41, 41)))
+                                .addGap(15, 15, 15)
+                                .addComponent(btnAdicionarItem)))
                         .addGap(57, 57, 57))))
         );
 
@@ -452,10 +507,6 @@ public class VendaView extends javax.swing.JFrame {
     private void txtValorTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtValorTotalActionPerformed
-
-    private void txtValorUnitarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorUnitarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorUnitarioActionPerformed
 
     private void txtUnidadesCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadesCompraActionPerformed
         // TODO add your handling code here:
@@ -484,6 +535,48 @@ public class VendaView extends javax.swing.JFrame {
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnAdicionarItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarItemActionPerformed
+        boolean verificar = true;
+        String produto = cbProduto.getSelectedItem().toString();
+        String cat = cbCategoria.getSelectedItem().toString();
+        int quantProd = Integer.parseInt(txtUnidadesCompra.getText());
+
+        Double valorUnit = null;
+        try {
+
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbenterpriseflow", "root", "");
+            String sql = "SELECT valorUnitario FROM produto WHERE nomeProduto = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, produto);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                valorUnit = rs.getDouble("valorUnitario");
+            }
+        } catch (Exception e) {
+
+        }
+
+        javax.swing.table.DefaultTableModel modelTbl = (javax.swing.table.DefaultTableModel) tbVenda.getModel();
+
+        for (int i = 0; i < modelTbl.getRowCount(); i++) {
+            String teste = modelTbl.getValueAt(i, 0).toString();
+            if (teste == produto) {
+                verificar = false;
+            }
+        }
+        if (verificar) {
+            modelTbl.addRow(new Object[]{produto, cat, valorUnit, quantProd});
+        } else {
+            JOptionPane.showMessageDialog(null, "Esse produto já foi cadastrado na venda!");
+        }
+    }//GEN-LAST:event_btnAdicionarItemActionPerformed
+
+    private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
+      limparCampos();
+    }//GEN-LAST:event_btnLimparCamposActionPerformed
 
     /**
      * @param args the command line arguments
@@ -537,7 +630,6 @@ public class VendaView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -550,6 +642,5 @@ public class VendaView extends javax.swing.JFrame {
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtUnidadesCompra;
     private javax.swing.JTextField txtValorTotal;
-    private javax.swing.JTextField txtValorUnitario;
     // End of variables declaration//GEN-END:variables
 }
